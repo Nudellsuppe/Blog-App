@@ -1,0 +1,25 @@
+<%- include("header.ejs") %>
+
+    <%- include("sidebar.ejs") %>
+        <div class="col-7 blog-main test ">
+            <form action="/posts/edit/<%= post.id %>" method="post">
+                <div class="form-group mb-5">
+                    <label for="exampleFormControlInput1">Titel</label>
+                    <input type="text" name="title" class="form-control" id="exampleFormControlInput1"
+                        value="<%= post.title %>">
+                </div>
+                <div class="form-group mb-3">
+                    <label for="exampleFormControlTextarea1">Short Description</label>
+                    <textarea class="form-control" name="description" id="exampleFormControlTextarea1"
+                        rows="1"><%= post.description %></textarea>
+                </div>
+                <div class="form-group mb-3">
+                    <label for="exampleFormControlTextarea1">The main Text goes here</label>
+                    <textarea class="form-control" name="text" id="exampleFormControlTextarea1"
+                        rows="6"><%= post.text %></textarea>
+                </div>
+                <button type="submit" class="btn btn-lg btn-block btn-primary">Repost</button>
+                <button type="get" class="btn btn-lg btn-block btn-primary">Discard</button>
+            </form>
+        </div>
+        <%- include("footer.ejs") %>

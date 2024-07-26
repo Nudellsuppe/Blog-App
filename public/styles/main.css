@@ -1,0 +1,21 @@
+.scrollarea {
+  overflow-y: auto;
+  height: 700px;
+}
+
+.smalDropDown {
+  display: none;
+}
+
+@media only screen and (max-width: 1140px) {
+  .sidebar {
+    display: none;
+  }
+
+  .test {
+    margin-left: 20%;
+  }
+  .smalDropDown {
+    display: list-item;
+  }
+}

@@ -1,0 +1,54 @@
+<%- include("header.ejs") %>
+
+    <%- include("sidebar.ejs") %>
+        <div class="col-7 blog-main test ">
+            <% if (locals.post) { %>
+
+                <h3 class="pb-3 mb-4 font-italic border-bottom">
+                    From the Top Of My Mind
+                </h3>
+
+                <div class="blog-post">
+                    <h2 class="blog-post-title">
+                        <%= post.title %>
+                    </h2>
+                    <p class="blog-post-meta">
+                        <%= post.date %> by <a href="#">
+                                <%= post.author %>
+                            </a>
+                    </p>
+
+                    <p>
+                        <%= post.description %>
+                    </p>
+                    <hr>
+                    <p>
+                        <%= post.text %>
+                    </p>
+                </div>
+                <hr>
+
+                <div class="d-flex justify-content-between ">
+                    <form class="delete-form mr-5" action="/posts/delete/<%= post.id %>" method="post">
+
+                        <button class="btn btn-danger mr-5" type="submit" name="submit">Delete</button>
+                    </form>
+                    <form class="delete-form" action="/posts/edit/<%= post.id %>" method="get">
+
+                        <button class="btn btn-success ml-4" type="submit" name="submit">Edit</button>
+                    </form>
+                </div>
+
+
+
+
+
+
+
+                <% } else { %>
+                    <h1>Welcome to my page</h1>
+                    <% } %>
+        </div>
+
+
+        <%- include("footer.ejs") %>
